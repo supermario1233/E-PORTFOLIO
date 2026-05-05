@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OJT Title Page</title>
+
+<link rel="icon" type="image/png" href="assets/img/ortada.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* prevents whole page scrolling */
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #1d2635;
+    color: white;
+    height: 100vh;
+    position: fixed; /* makes it stay */
+    top: 0;
+    left: 0;
+    padding: 20px;
+    overflow: hidden; /* no scroll */
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #2f3b52;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+/* TITLE PAGE HERO */
+.hero {
+    height: 320px;
+    border-radius: 18px;
+    position: relative;
+    background: url('assets/img/omsc.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 5px 0;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* IMPROVED SECTION DESIGN */
+.ack-section {
+    margin-top: 30px;
+    padding: 35px 40px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border-left: 6px solid #4f46e5;
+    transition: 0.3s;
+}
+
+.ack-section:hover {
+    transform: translateY(-3px);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;   /* keeps icon + text aligned */
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1f2937;
+    margin: 0;
+}
+
+.section-header i {
+    font-size: 18px;
+    color: #4f46e5;
+    background: rgba(79,70,229,0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+/* CONTENT TEXT */
+.ack-content p {
+    margin-bottom: 15px;
+}
+
+/* OPTIONAL: NICE BACKGROUND FOR MAIN */
+.main {
+    margin-left: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 25px;
+    scroll-behavior: smooth;
+    background: #f4f6fb;
+}
+
+/* CHAPTER 1 BOX */
+.chapter-box {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    border-radius: 18px;
+    overflow: hidden;
+
+    /* BACKGROUND IMAGE */
+    background: url('omsc.png') center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+}
+
+/* DARK OVERLAY */
+.chapter-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* TEXT CONTENT */
+.chapter-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.chapter-content h3 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.chapter-content h1 {
+    font-size: 38px;
+    font-weight: 900;
+    margin: 5px 0;
+    letter-spacing: 2px;
+}
+
+.chapter-content p {
+    margin-top: 10px;
+    font-size: 15px;
+    opacity: 0.9;
+}
+/* DROPDOWN */
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.submenu a {
+    font-size: 14px;
+    padding: 8px;
+    background: #232f44;
+    margin-bottom: 5px;
+    border-radius: 6px;
+}
+
+.submenu a:hover {
+    background: #4f46e5;
+}
+
+.toggle a {
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="text-center mb-4">
+        <img src="profile.jpg" class="profile-img mb-2">
+        <h6>Cabiles, Dee Jay B.</h6>
+        <small>Trainee / OJT Student</small>
+    </div>
+
+    <a href="index.html"><i class="fa-solid fa-file-lines"></i> Title Page</a>
+
+    <!-- INTRODUCTION -->
+    <div class="toggle" onclick="toggleMenu('introMenu')">
+        <a href="javascript:void(0)">
+            <i class="fa-solid fa-book-open"></i> Introduction
+        </a>
+    </div>
+    <div class="submenu" id="introMenu">
+        <a href="importance.html" onclick="keepOpen('introMenu')">A. Importance of Internship</a>
+        <a href="objectives.html" onclick="keepOpen('introMenu')">B. Objectives of Intership</a>
+        <a href="timeplace.html" onclick="keepOpen('introMenu')">C. Time & Place of Internship</a>
+    </div>
+
+    <a href="profile.html"><i class="fa-solid fa-building"></i> Company Profile</a>
+    <a href="work.html"><i class="fa-solid fa-briefcase"></i> Work Experiences</a>
+    <a href="assessment.html"><i class="fa-solid fa-clipboard-check"></i> Assessment</a>
+    <a href="appendices.html"><i class="fa-solid fa-paperclip"></i> Appendices</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- CHAPTER 1 TITLE BOX -->
+<div class="chapter-box">
+    <div class="chapter-overlay"></div>
+
+    <div class="chapter-content">
+        <h3>CHAPTER I</h3>
+        <h1>INTRODUCTION</h1>
+    </div>
+</div>
+   <div class="ack-section">
+
+    <div class="section-header">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <h2>Importance of Internship</h2>
+    </div>
+
+    <div class="ack-content">
+        <p>
+            Internship is an essential part of being a student in Information Technology because it marks the shift from academic learning to real-world experience. While school teaches us the theories and concepts, internship allows us to apply them in actual situations. It introduces us to real challenges that cannot be fully learned through books alone.
+        </p>
+
+        <p>
+            This experience does not only improve my technical skills but also helps shape my character. I learn how to collaborate with others, manage my time effectively, communicate professionally, and handle pressure in the workplace. It also helps me discover which area of IT I am most interested in, whether it is development, networking, or system support.
+        </p>
+
+        <p>
+            Overall, internships contribute to both my personal and professional growth. They give me a clearer understanding of what working in the industry is like and prepare me to face future responsibilities with greater confidence and direction after graduation.
+        </p>
+    </div>
+
+</div>
+<div class="ack-section">
+
+    <div class="section-header">
+        <i class="fa-solid fa-bullseye"></i>
+        <h2>Objectives of Internship</h2>
+    </div>
+
+    <div class="ack-content">
+        <p>
+            The internship aims to provide students with hands-on experience and enhance their competencies in the field of Information Technology, particularly in the Billing Office of Occidental Mindoro Electric Cooperative (OMECO).
+        </p>
+
+        <p><b>1.</b> Ensure that students acquire knowledge, technical skills, and competencies related to billing operations such as data encoding and record management.</p>
+
+        <p><b>2.</b> Improve problem-solving and analytical skills in handling billing concerns, account verification, and charge computation.</p>
+
+        <p><b>3.</b> Enhance office skills in processing billing records, generating reports, and maintaining organized files efficiently.</p>
+
+        <p><b>4.</b> Engage students in real office tasks and expose them to professional workplace practices and customer service interactions.</p>
+
+        <p><b>5.</b> Encourage discipline, teamwork, punctuality, and adherence to company rules and procedures.</p>
+    </div>
+
+</div>
+
+<div class="ack-section"> 
+    <div class="section-header"> 
+        <i class="fa-solid fa-location-dot"></i> 
+        <h2>Time and Place of Internship</h2> 
+    </div> 
+
+    <div class="ack-content"> 
+        <p>
+            Time of practicum: Monday–Friday (8:00 AM – 12:00 NN and 1:00 PM – 5:00 PM)
+        </p>
+
+        <p>
+            The on-the-job training was conducted from February 2, 2026 to April 30, 2026 at Occidental Mindoro Electric Cooperative (OMECO), located along M. H. del Pilar Street, Barangay VI, San Jose, Occidental Mindoro. I was assigned to the Billing Office, where I completed a total of 486 hours of office work.
+        </p>
+
+        <!-- IMAGE INSERTED HERE -->
+       <div style="margin-top:25px;">
+    <img src="location.png" alt="OMECO Building" 
+         style="width:100%; height:auto; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.25);">
+    
+    <p style="text-align:center; font-size:14px; margin-top:10px; color:#6b7280;">
+        Occidental Mindoro Electric Cooperative (OMECO) Office
+    </p>
+</div>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    const isOpen = menu.style.display === "flex";
+
+    menu.style.display = isOpen ? "none" : "flex";
+    localStorage.setItem(menuId, isOpen ? "closed" : "open");
+}
+
+function keepOpen(menuId) {
+    localStorage.setItem(menuId, "open");
+}
+
+window.onload = function () {
+    const menus = ["introMenu"];
+
+    menus.forEach(menuId => {
+        const state = localStorage.getItem(menuId);
+        const menu = document.getElementById(menuId);
+
+        if (state === "open" && menu) {
+            menu.style.display = "flex";
+        }
+    });
+};
+</script>
+
+</body>
+</html>

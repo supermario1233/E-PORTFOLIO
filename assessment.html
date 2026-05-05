@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OJT Performance Evaluation</title>
+
+<link rel="icon" type="image/png" href="assets/img/ortada.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #1d2635;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #2f3b52;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+/* MAIN */
+.main {
+    margin-left: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* ACK STYLE BOX (MAIN CONTENT STYLE) */
+.ack-section {
+    margin-bottom: 25px;
+}
+
+.ack-content-box {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+}
+
+/* CHAPTER BOX */
+.chapter-box {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: url('omsc.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.chapter-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.chapter-content {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.chapter-content h3 {
+    letter-spacing: 3px;
+    font-size: 16px;
+}
+
+.chapter-content h1 {
+    font-weight: 900;
+    font-size: 34px;
+}
+
+/* HEADER */
+.report-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.report-header h2 {
+    font-weight: 800;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* CARD IMAGE */
+.eval-card {
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.eval-card:hover {
+    transform: translateY(-5px);
+}
+
+/* PROGRESS */
+.progress {
+    height: 12px;
+    border-radius: 10px;
+}
+
+/* RATING */
+.rating-box {
+    background: linear-gradient(135deg,#4f46e5,#6366f1);
+    color: white;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #111827;
+}
+
+/* SIGN CARD */
+.sign-card {
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #ffffff, #f3f6ff);
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.sign-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* ICON BOX */
+.icon-box {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 10px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: white;
+}
+
+/* ROLE COLORS */
+.icon-box.student { background: #4f46e5; }
+.icon-box.peer { background: #22c55e; }
+.icon-box.coordinator { background: #f59e0b; }
+.icon-box.supervisor { background: #ef4444; }
+
+/* TEXT */
+.role-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #111827;
+}
+
+.role-name {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* RESPONSIVE SPACING */
+@media (max-width: 768px) {
+    .sign-card {
+        padding: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <div class="text-center mb-4">
+        <img src="profile.jpg" class="profile-img mb-2">
+        <h6>Cabiles, Dee Jay B.</h6>
+        <small>Trainee / OJT Student</small>
+    </div>
+
+    <a href="index.html"><i class="fa-solid fa-file-lines"></i> Title Page</a>
+    <a href="introduction.html"><i class="fa-solid fa-book-open"></i> Introduction</a>
+    <a href="profile.html"><i class="fa-solid fa-building"></i> Company Profile</a>
+    <a href="work.html"><i class="fa-solid fa-briefcase"></i> Work Experiences</a>
+    <a href="assessment.html"><i class="fa-solid fa-clipboard-check"></i> Assessment</a>
+    <a href="appendices.html"><i class="fa-solid fa-paperclip"></i> Appendices</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- CHAPTER HEADER -->
+<div class="chapter-box">
+    <div class="chapter-overlay"></div>
+    <div class="chapter-content">
+        <h3>CHAPTER IV</h3>
+        <h1>ASSESSMENT OF THE PRACTICUM PROGRAM</h1>
+    </div>
+</div>
+
+<!-- ACK STYLE MAIN BOX -->
+<div class="ack-content-box">
+
+    <!-- HEADER -->
+    <div class="report-header">
+        <h2>
+            <i class="fa-solid fa-clipboard-check text-primary"></i>
+            Student Internship Performance Evaluation
+        </h2>
+        <p class="small-muted">
+            Official Evaluation Report • BS Information Technology
+        </p>
+    </div>
+
+    <!-- SECTION -->
+    <div class="ack-section">
+        <h5 class="section-title">Evaluation Documents</h5>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="card eval-card shadow-sm">
+                    <img src="general.jpg">
+                    <div class="p-3"><b>Page 1</b></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card eval-card shadow-sm">
+                    <img src="skills.jpg">
+                    <div class="p-3"><b>Page 2</b></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card eval-card shadow-sm">
+                    <img src="technical.jpg">
+                    <div class="p-3"><b>Page 3</b></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="ack-section">
+
+        <h5 class="section-title">Performance Summary</h5>
+
+        <div class="row">
+
+            <div class="col-md-8">
+
+                <div class="mb-3">
+                    <label>Student Rating</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" style="width:95%">278</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Peer Rating</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" style="width:95%">274</div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Coordinator</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" style="width:92%"></div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Supervisor</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" style="width:91%">284</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="rating-box">
+                    <h3>—</h3>
+                    <p>Overall Rating</p>
+                    <div class="text-warning">★★★★★</div>
+                    <span class="badge bg-light text-dark mt-2">Pending Computation</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+  <!-- SIGNATORIES -->
+<div class="ack-section signatories-section">
+
+    <h5 class="section-title">Approval & Signatories</h5>
+
+    <div class="row g-4 justify-content-center">
+
+        <!-- STUDENT -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card sign-card text-center p-4 shadow-sm">
+                <div class="icon-box student">
+                    <i class="fa fa-user-graduate"></i>
+                </div>
+                <h6 class="role-title">Student</h6>
+                <p class="role-name">Deejay B. Cabiles</p>
+            </div>
+        </div>
+
+        <!-- PEER -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card sign-card text-center p-4 shadow-sm">
+                <div class="icon-box peer">
+                    <i class="fa fa-users"></i>
+                </div>
+                <h6 class="role-title">Peer</h6>
+                <p class="role-name">Justin Marcksol B. Castrence</p>
+            </div>
+        </div>
+
+        <!-- COORDINATOR -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card sign-card text-center p-4 shadow-sm">
+                <div class="icon-box coordinator">
+                    <i class="fa fa-chalkboard"></i>
+                </div>
+                <h6 class="role-title">Coordinator</h6>
+                <p class="role-name">Dr. Rommel Sanqui</p>
+            </div>
+        </div>
+
+        <!-- SUPERVISOR -->
+        <div class="col-md-3 col-sm-6">
+            <div class="card sign-card text-center p-4 shadow-sm">
+                <div class="icon-box supervisor">
+                    <i class="fa fa-briefcase"></i>
+                </div>
+                <h6 class="role-title">Supervisor</h6>
+                <p class="role-name">Philip Gerome D. San Diego</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

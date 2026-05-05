@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OJT Title Page</title>
+
+<link rel="icon" type="image/png" href="assets/img/ortada.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #1d2635;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #2f3b52;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* SECTION */
+.ack-section {
+    margin-top: 40px;
+    padding: 35px 40px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-left: 6px solid #4f46e5;
+}
+
+/* HEADER */
+.section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.section-header i {
+    font-size: 20px;
+    color: #4f46e5;
+    background: rgba(79,70,229,0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* CONTENT */
+.ack-content {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 15.5px;
+    text-align: justify;
+}
+
+/* DROPDOWN */
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.submenu a {
+    font-size: 14px;
+    padding: 8px;
+    background: #232f44;
+    margin-bottom: 5px;
+    border-radius: 6px;
+}
+
+.submenu a:hover {
+    background: #4f46e5;
+}
+
+.toggle a {
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="text-center mb-4">
+        <img src="profile.jpg" class="profile-img mb-2">
+        <h6>Cabiles, Dee Jay B.</h6>
+        <small>Trainee / OJT Student</small>
+    </div>
+
+    <a href="index.html"><i class="fa-solid fa-file-lines"></i> Title Page</a>
+
+    <!-- INTRODUCTION -->
+    <div class="toggle" onclick="toggleMenu('introMenu')">
+        <a href="javascript:void(0)">
+            <i class="fa-solid fa-book-open"></i> Introduction
+        </a>
+    </div>
+    <div class="submenu" id="introMenu">
+        <a href="importance.html" onclick="keepOpen('introMenu')">A. Importance of Internship</a>
+        <a href="objectives.html" onclick="keepOpen('introMenu')">B. Objectives of Intership</a>
+        <a href="" onclick="keepOpen('introMenu')">C. Time & Place of Internship</a>
+    </div>
+
+    <a href="profile.html"><i class="fa-solid fa-building"></i> Company Profile</a>
+    <a href="work.html"><i class="fa-solid fa-briefcase"></i> Work Experiences</a>
+    <a href="assessment.html"><i class="fa-solid fa-clipboard-check"></i> Assessment</a>
+    <a href="appendices.html"><i class="fa-solid fa-paperclip"></i> Appendices</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- MAIN -->
+<div class="main">
+    <div class="ack-section">
+
+        <div class="section-header">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            <h2>Importance of Internship</h2>
+        </div>
+
+    <div class="ack-content">
+        <!-- your existing paragraphs -->
+
+        <p>
+       Internship is an essential part of being a student in Information Technology because it marks the shift from academic learning to real-world experience. While school teaches us the theories and concepts, internship allows us to apply them in actual situations. It introduces us to real challenges that cannot be fully learned through books alone.
+</p>
+ <p>
+
+This experience does not only improve my technical skills but also helps shape my character. I learn how to collaborate with others, manage my time effectively, communicate professionally, and handle pressure in the workplace. It also helps me discover which area of IT I am most interested in, whether it is development, networking, or system support.
+</p>
+ <p>
+Overall, internships contribute to both my personal and professional growth. They give me a clearer understanding of what working in the industry is like and prepare me to face future responsibilities with greater confidence and direction after graduation.
+        </p>
+
+    </div>
+
+</div>
+ </main>
+<!-- OBJECTIVES -->
+<div class="ack-section">
+    <div class="section-header">
+        <i class="fa-solid fa-bullseye"></i>
+        <h2>Objectives of Internship</h2>
+    </div>
+
+    <div class="ack-content">
+        <p>
+        The internship aims to provide students with hands-on experience and enhance their competencies in the field of Information Technology, particularly in the Billing Office of Occidental Mindoro Electric Cooperative (OMECO). Specifically, it seeks to:
+<p>
+1.Ensure that students acquire the necessary knowledge, technical skills, and competencies related to billing operations, including data encoding, record management, and the use of computerized billing systems.
+</p>
+<p>
+2.Improve students’ problem-solving and analytical skills in handling billing concerns, such as verifying consumer accounts, identifying discrepancies, and assisting in the accurate computation of charges.
+</p>
+<p>
+3.Enhance skills in office and strengthen the ability to efficiently process billing records, generate reports, and maintain organized files.
+</p>
+<p>
+4.Engage students in actual office tasks within a professional work environment, and prepare them for future careers by exposing them to real workplace practices, standards, and customer service interactions.
+</p>
+<p>
+5.Encourage proper coordination with supervisors and adherence to company rules and procedures, while developing discipline through punctuality, responsibility, teamwork, and consistent performance.
+        </p>
+    </div>
+</div>
+
+<div class="ack-section"> 
+    <div class="section-header"> 
+        <i class="fa-solid fa-location-dot"></i> 
+        <h2>Time and Place of Internship</h2> 
+    </div> 
+
+    <div class="ack-content"> 
+        <p>
+            Time of practicum: Monday–Friday (8:00 AM – 12:00 NN and 1:00 PM – 5:00 PM)
+        </p>
+
+        <p>
+            The on-the-job training was conducted from February 2, 2026 to April 30, 2026 at Occidental Mindoro Electric Cooperative (OMECO), located along M. H. del Pilar Street, Barangay VI, San Jose, Occidental Mindoro. I was assigned to the Billing Office, where I completed a total of 486 hours of office work.
+        </p>
+
+        <!-- IMAGE INSERTED HERE -->
+       <div style="margin-top:25px;">
+    <img src="location.png" alt="OMECO Building" 
+         style="width:100%; height:auto; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,0.25);">
+    
+    <p style="text-align:center; font-size:14px; margin-top:10px; color:#6b7280;">
+        Occidental Mindoro Electric Cooperative (OMECO) Office
+    </p>
+</div>
+
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    const isOpen = menu.style.display === "flex";
+
+    menu.style.display = isOpen ? "none" : "flex";
+    localStorage.setItem(menuId, isOpen ? "closed" : "open");
+}
+
+function keepOpen(menuId) {
+    localStorage.setItem(menuId, "open");
+}
+
+window.onload = function () {
+    const menus = ["introMenu"];
+
+    menus.forEach(menuId => {
+        const state = localStorage.getItem(menuId);
+        const menu = document.getElementById(menuId);
+
+        if (state === "open" && menu) {
+            menu.style.display = "flex";
+        }
+    });
+};
+</script>
+
+</body>
+</html>
